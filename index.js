@@ -14,6 +14,9 @@ const app = express()
 app.get('/api',(req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"))
 })
+app.get('/api/home',(req, res) => {
+    res.json({message:"This is home page"})
+})
 
 const port = process.env.PORT || 8080
 app.listen(port, console.log(`Server is running on port ${port}`))
